@@ -9,17 +9,17 @@
  * http://www.denso-wave.com/qrcode/faqpatent-e.html
  */
 import {
+    BaseLoggger,
     Html5QrcodeConstants,
-    Html5QrcodeScanType,
-    QrcodeSuccessCallback,
-    QrcodeErrorCallback,
-    Html5QrcodeResult,
     Html5QrcodeError,
     Html5QrcodeErrorFactory,
-    BaseLoggger,
+    Html5QrcodeResult,
+    Html5QrcodeScanType,
     Logger,
-    isNullOrUndefined,
+    QrcodeErrorCallback,
+    QrcodeSuccessCallback,
     clip,
+    isNullOrUndefined,
 } from "./core";
 
 import { CameraCapabilities } from "./camera/core";
@@ -28,8 +28,8 @@ import { CameraDevice } from "./camera/core";
 
 import {
     Html5Qrcode,
-    Html5QrcodeConfigs,
     Html5QrcodeCameraScanConfig,
+    Html5QrcodeConfigs,
     Html5QrcodeFullConfig,
 } from "./html5-qrcode";
 
@@ -38,8 +38,8 @@ import {
 } from "./strings";
 
 import {
-    ASSET_FILE_SCAN,
     ASSET_CAMERA_SCAN,
+    ASSET_FILE_SCAN,
 } from "./image-assets";
 
 import {
@@ -51,7 +51,7 @@ import {
 } from "./ui";
 
 import {
-  CameraPermissions
+    CameraPermissions
 } from "./camera/permissions";
 
 import { Html5QrcodeScannerState } from "./state-manager";
@@ -114,7 +114,7 @@ export interface Html5QrcodeScannerConfig
      *    - [SCAN_TYPE_FILE] - Only file based scan supported.
      *  - Setting wrong values or multiple values will fail.
      */
-    supportedScanTypes?: Array<Html5QrcodeScanType> | [];
+    supportedScanTypes?: Array<Html5QrcodeScanType>;
 
     /**
      * If `true` the rendered UI will have button to turn flash on or off
